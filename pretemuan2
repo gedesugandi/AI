@@ -1,0 +1,47 @@
+
+import numpy as np #membaca data dari csv dan array
+import pandas as pd #membaca data csv
+0,1
+df = pd.read_csv('spam.csv', encoding = 'ISO-8859-1', usecols = [0,1])
+df.head()
+df['v1'] = df.v1.map({'ham':0, 'spam':1}) #merubah kolom v1 menjadi integer dan kta yang menentukan
+df.head()
+df.shape
+money
+dokumen = ['hello, how are you!', ' money earn from here', 'Congratulation brow','call me please','send me money']
+r
+from sklearn.feature_extraction.text import CountVectorizer
+count_vector = CountVectorizer()
+count_vector.fit(dokumen)
+)
+names = count_vector.get_feature_names()
+names
+doc_array = count_vector.transform(dokumen).toarray()
+doc_array
+doc_array
+frequency_matrix = pd.DataFrame(data = doc_array, columns = names)
+frequency_matrix
+learn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
+y_test
+x_train,x_test, y_train,y_test = train_test_split(df['v2'], df['v1'], random_state = 1)
+count_vector = CountVectorizer()
+_train
+trainingData = count_vector.fit_transform(x_train)
+testing_data = count_vector.transform(x_test)
+MultinominalNB
+from sklearn.naive_bayes import MultinomialNB
+naive_bayes = MultinomialNB()
+naive_bayes.fit(trainingData, y_train)
+kata = ['Free laptop']
+new_data = count_vector.transform(kata)
+new_data
+new_data
+predic = naive_bayes.predict(testing_data)
+predic
+recall_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+y_test
+acc = accuracy_score(y_test, predic)
+acc
+acc
